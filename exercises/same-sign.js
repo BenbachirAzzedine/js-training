@@ -8,7 +8,17 @@
  */
 
 // Your code :
-
+function sameSign(number, number1) {
+    if (number == 0 && number1 == 0) {
+        return true
+    } else if (number >= 0 && number1 <= 0) {
+        return false
+    } else if (number <= 0 && number1 >= 0) {
+        return false
+    } else {
+        return true;
+    }
+}
 //* Begin of tests
 const assert = require('assert')
 
@@ -23,4 +33,4 @@ assert.strictEqual(sameSign(-231, 1), false)
 assert.strictEqual(sameSign(-231, 0), false)
 assert.strictEqual(sameSign(0, 231), false)
 assert.strictEqual(sameSign(231, -233), false)
-// End of tests */
+    // End of tests */
