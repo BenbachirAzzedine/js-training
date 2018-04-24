@@ -9,37 +9,13 @@
  */
 
 // Your code :
-function multiply(a, b) {
-    let i = 0;
-    let result = 0;
-    if (a == 0 || b == 0) {
-        return 0;
-    } else if (a < 0 && b < 0) {
-        while (i < -b) {
-            result = result + a;
-            i++;
-        }
-        result = -result;
-        return result;
-    } else if (a > 0 && b < 0) {
-        while (i < a) {
-            result = result + b;
-            i++;
-        }
-        return result;
-    } else if (a < 0 && b > 0) {
-        while (i < b) {
-            result = result + a;
-            i++;
-        }
-        return result;
-    } else {
-        while (i < b) {
-            result = result + a;
-            i++;
-        }
-        return result;
+function multiply(x, y) {
+    if (y > 0) {
+        return (x + multiply(x, y - 1));
+    } else if (y < 0) {
+        return -multiply(x, -y);
     }
+    return 0;
 }
 //* Begin of tests
 const assert = require('assert')

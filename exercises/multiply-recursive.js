@@ -10,7 +10,14 @@
  */
 
 // Your code :
-
+function multiply(x, y) {
+    if (y > 0) {
+        return (x + multiply(x, y - 1));
+    } else if (y < 0) {
+        return -multiply(x, -y);
+    }
+    return 0;
+}
 //* Begin of tests
 const assert = require('assert')
 
@@ -28,4 +35,4 @@ assert.strictEqual(multiply(0, 0), 0)
 assert.strictEqual(multiply(123, -22), -2706)
 assert.strictEqual(multiply(-22, 123), -2706)
 assert.strictEqual(multiply(-22, -123), 2706)
-// End of tests */
+    // End of tests */
